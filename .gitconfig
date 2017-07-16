@@ -1,0 +1,9 @@
+[user]
+	email = aidandbush@gmail.com
+	name = aidan
+[credential]
+	helper = cache
+[core]
+	editor = vim
+[color]
+	ui = true
