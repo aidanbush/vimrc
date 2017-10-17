@@ -14,7 +14,7 @@ if [ ! -d ~/.vim/colors/ ]; then
 fi
 
 echo "copying over tayra.vim colors file"
-cp vim-colors-tayra/colors/tayra.vim
+cp vim-colors-tayra/colors/tayra.vim ~/.vim/colors/
 
 # copy gitconfig over
 cp .gitconfig ~/

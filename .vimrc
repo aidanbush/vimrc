@@ -5,6 +5,7 @@ set tabstop=4
 
 syntax on
 set colorcolumn=81
+let c_space_errors=1
 
 " colour theme
 " https://github.com/the31k/vim-colors-tayra
