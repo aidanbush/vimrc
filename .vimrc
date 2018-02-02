@@ -1,11 +1,15 @@
 " scroll buffer at top and bottom
 set scrolloff=6
-" tab size of 4
+" tabs printed as 4 characters
 set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set number
 
 syntax on
 set colorcolumn=81
 let c_space_errors=1
+filetype plugin indent on
 
 " colour theme
 " https://github.com/the31k/vim-colors-tayra
@@ -17,15 +21,10 @@ set t_Co=256
 hi Normal guibg=NONE ctermbg=NONE
 
 "auto call functions
-autocmd VimEnter * call SetExpandTab()
 autocmd VimEnter * call SetSpellCheck()
 
-"set expand tab on all but speficied file types
-function! SetExpandTab()
-    if (&filetype!='make')
-        set expandtab
-    endif
-endfunction
+"read .pl as prolog
+let g:filetype_pl="prolog"
 
 "sets spellcheck on text(nofile type) and gitcommit files
 function! SetSpellCheck()
