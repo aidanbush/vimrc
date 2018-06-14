@@ -4,7 +4,12 @@ set scrolloff=6
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
+
+" add line numbers
 set number
+
+" split new vertical element to right
+set splitright
 
 syntax on
 set colorcolumn=81
@@ -26,7 +31,7 @@ autocmd VimEnter * call SetSpellCheck()
 "read .pl as prolog
 let g:filetype_pl="prolog"
 
-"sets spellcheck on text(nofile type) and gitcommit files
+"sets spellcheck on text(no file type), gitcommit, and latex files
 function! SetSpellCheck()
     if (&filetype=='' || &filetype=='gitcommit' || &filetype=='tex')
         setlocal spell spelllang=en_ca
