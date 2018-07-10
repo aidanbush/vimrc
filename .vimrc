@@ -4,6 +4,7 @@ set scrolloff=6
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
+set expandtab
 
 " add line numbers
 set number
@@ -38,3 +39,18 @@ function! SetSpellCheck()
     endif
 endfunction
 
+" vim go stuff
+let g:go_fmt_command = "goimports"
+
+" vim-plug
+" auto install
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+" plugins
+call plug#begin('~/.vim/plugged')
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+call plug#end()
