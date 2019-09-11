@@ -15,6 +15,7 @@ set splitright
 syntax on
 set colorcolumn=81
 let c_space_errors=1
+"let c_no_trail_space_errors=1
 filetype plugin indent on
 
 " colour theme
@@ -30,7 +31,7 @@ hi Normal guibg=NONE ctermbg=NONE
 autocmd VimEnter * call SetSpellCheck()
 
 "read .pl as prolog
-let g:filetype_pl="prolog"
+"let g:filetype_pl="prolog"
 
 "sets spellcheck on text(no file type), gitcommit, and latex files
 function! SetSpellCheck()
@@ -38,6 +39,10 @@ function! SetSpellCheck()
         setlocal spell spelllang=en_ca
     endif
 endfunction
+
+:autocmd BufRead,BufNewFile */360/* setlocal noexpandtab tabstop=8 softtabstop=0 shiftwidth=8
+:autocmd BufRead,BufNewFile */496/* setlocal noexpandtab tabstop=8 softtabstop=0 shiftwidth=8
+:autocmd BufRead,BufNewFile */wctf/tools/* setlocal noexpandtab tabstop=8 softtabstop=0 shiftwidth=8
 
 " vim go stuff
 let g:go_fmt_command = "goimports"
